@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	background-image: url(../img/weatherAppBack.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 100vw;
+	min-height: 100vh;
+
+	.container {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.header {
+			width: 100%;
+			height: 70px;
+			background-color: #f1f1f1;
+			display: flex;
+			justify-content: center;
+			// margin-bottom: 20px;
+			border-bottom: 1px solid #999;
+			.nav {
+				width: 100%;
+				max-width: 950px;
+				height: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 20px;
+				.logo {
+					color: #1e3050;
+					display: flex;
+					h1 {
+						font-size: 25px;
+					}
+					i {
+						font-size: 20px;
+					}
+				}
+				.theme {
+					cursor: pointer;
+					width: 50px;
+					height: 26px;
+					border-radius: 20px;
+					background-color: #1e3050;
+					position: relative;
+					box-shadow: inset 0px 0px 10px rgba($color: #fff, $alpha: 0.5),
+						inset 0px 0px 15px rgba($color: #fff, $alpha: 0.3);
+					i {
+						position: absolute;
+						top: 2px;
+						left: 2px;
+						background-color: #fff;
+						width: 22px;
+						height: 22px;
+						border-radius: 50%;
+						transition: left 0.3s ease;
+						box-shadow: inset 0px 0px 3px rgba($color: #000, $alpha: 0.4);
+					}
+					&.active {
+						background-color: #f1f1f1;
+						box-shadow: inset 0px 0px 8px rgba($color: #000, $alpha: 0.5);
+						i {
+							background-color: #1e3050;
+							left: 26px;
+							box-shadow: inset 0px 0px 5px rgba($color: #fff, $alpha: 0.5);
+						}
+					}
+				}
+			}
+			&.active {
+				background-color: #1e3050;
+				.logo {
+					color: #f1f1f1;
+				}
+			}
+		}
+
+		.main {
+			width: 90%;
+			height: 100%;
+			display: flex;
+			align-items: start;
+			justify-content: center;
+			margin-top: 35px;
+
+			.card {
+				position: relative;
+				height: 450px;
+				min-width: 325px;
+				width: 351px;
+				max-width: 351px;
+				-webkit-backdrop-filter: blur(7px);
+				backdrop-filter: blur(7px);
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: #f1f1f1c0;
+					box-shadow: 0px 0px 12px rgba($color: #000, $alpha: 0.4);
+					border-radius: 12px;
+					opacity: 0.5;
+					z-index: -1;
+				}
+				.card__info {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					.country-city {
+						gap: 5px;
+						width: 100%;
+						height: 20%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						padding-top: 10px;
+						color: #f1f1f1;
+						span {
+							font-weight: 600;
+							font-size: 25px;
+						}
+					}
+					.card__info--img {
+						width: 100%;
+						height: 50%;
+						display: flex;
+						justify-content: center;
+						padding: 10px 0;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						img {
+							width: 100px;
+							height: 100px;
+							border-radius: 50%;
+							box-shadow: inset 0px 0px 10px rgba($color: #fff, $alpha: 0.3),
+								0px 0px 30px rgba($color: #000, $alpha: 0.1);
+						}
+						.celcius {
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							color: #fff;
+							p {
+								font-size: 14px;
+								font-weight: 300;
+								letter-spacing: 1px;
+							}
+							span {
+								font-size: 40px;
+								font-weight: 500;
+							}
+						}
+					}
+					.card__info--status {
+						width: 100%;
+						height: 30%;
+						padding: 0 15px;
+						// background-color: #f1f1f1;
+						color: #fff;
+						border-radius: 0 0 12px 12px;
+						background-image: linear-gradient(0deg, #000000d0, #ffffff00);
+						// .day-status {
+						// 	width: 100%;
+						// 	height: 20%;
+						// 	display: flex;
+						// 	justify-content: center;
+						// 	align-items: center;
+						// 	font-size: 30px;
+						// 	font-weight: 600;
+						// 	padding-top: 10px;
+						// }
+						.status-container {
+							width: 100%;
+							height: 100%;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+
+							.status-box {
+								width: 100%;
+								height: 100%;
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								align-items: center;
+								font-weight: 400;
+								font-size: 18px;
+								div {
+									display: flex;
+									align-items: center;
+									gap: 3px;
+								}
+							}
+						}
+					}
+				}
+				&.active {
+					&:before {
+						background-color: #1e3050;
+					}
+					.card__info {
+						.card__info--img {
+							img {
+								box-shadow: inset 0px 0px 70px rgba($color: #fff, $alpha: 0.5),
+									0px 0px 20px rgba($color: #fff, $alpha: 0.3);
+							}
+						}
+					}
+				}
+			}
+
+			.form {
+				width: 351px;
+				padding: 25px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				p {
+					position: absolute;
+					left: 13%;
+					top: 75px;
+					font-size: 17px;
+					padding: 4px;
+					border-radius: 5px;
+					background-color: #f1f1f1cc;
+				}
+				.input-container {
+					gap: 10px;
+					display: flex;
+					width: 83%;
+
+					div {
+						position: relative;
+						width: 50%;
+						input {
+							font-family: "Poppins", sans-serif;
+							font-size: 16px;
+							background-color: #f1f1f1;
+							border: 1px solid #ccc;
+							margin: 8px 0;
+							width: 100%;
+							height: 38px;
+							padding: 10px;
+							outline: none;
+							border-radius: 20px;
+							&:focus {
+								box-shadow: 0px 0px 5px rgba($color: #72d6fd, $alpha: 0.7);
+								background-color: #f5f5f5;
+							}
+						}
+						.label {
+							position: absolute;
+							top: 13px;
+							left: 20px;
+							color: #999;
+							font-size: 16px;
+							transition: top 0.3s ease, transform 0.3s ease;
+							&.active {
+								top: -14px;
+								transform: scale(0.9);
+								color: #1e3050;
+							}
+						}
+					}
+				}
+
+				.alert-message {
+					color: rgb(231, 36, 36);
+					text-align: center;
+				}
+				.btn-get {
+					width: 38px;
+					height: 38px;
+					background-color: #f1f1f1;
+					color: #999;
+					font-family: "Poppins", sans-serif;
+					font-size: 14px;
+					border: none;
+					border-radius: 50%;
+					cursor: pointer;
+
+					&:hover {
+						background-color: #fff;
+					}
+				}
+			}
+		}
+	}
+}

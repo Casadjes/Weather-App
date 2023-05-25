@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<title>Weather App</title>
+		<script
+			src="https://kit.fontawesome.com/ed425ea077.js"
+			crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header class="header">
+				<nav class="nav">
+					<div class="logo">
+						<h1>Weather App</h1>
+						<i class="fa-solid fa-earth-americas"></i>
+					</div>
+					<div class="theme" id="theme-toggle">
+						<i></i>
+					</div>
+				</nav>
+			</header>
+
+			<!-- container -->
+			<main class="main" id="main">
+				<div class="card">
+					<div class="card__info">
+						<form class="form" id="form" autocomplete="off">
+							<div class="input-container">
+								<div>
+									<label for="city-input" class="label">City</label>
+									<input type="text" id="city-input" />
+								</div>
+								<div>
+									<label for="country-input" class="label">Country</label>
+									<input type="text" id="country-input" />
+								</div>
+							</div>
+
+							<button type="submit" id="showResult" class="btn-get" title="btn">
+								<i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+							</button>
+						</form>
+						<div class="card__info--img">
+							<img
+								src="https://cdn-icons-png.flaticon.com/512/2580/2580627.png"
+								alt="sun"
+								id="img-card" />
+							<div class="celcius">
+								<p class="wheather-status">Sunny</p>
+								<span>--°C</span>
+							</div>
+							<div class="country-city">
+								<i class="fa-sharp fa-solid fa-location-dot"></i>
+								<span class="city" id="city">City,</span>
+								<span class="country" id="country">Country</span>
+							</div>
+						</div>
+
+						<div class="card__info--status">
+							<div class="status-container">
+								<div class="status-box">
+									<p>Max:</p>
+									<div>
+										<span id="max">--°C</span>
+										<i class="fas fa-thermometer-full"></i>
+									</div>
+								</div>
+								<div class="status-box">
+									<p>Min:</p>
+									<div>
+										<span id="min">--°C </span
+										><i class="fas fa-thermometer-quarter"></i>
+									</div>
+								</div>
+
+								<div class="status-box">
+									<p>Humidity:</p>
+									<div>
+										<span id="humidity">-- </span><i class="fas fa-water"></i>
+									</div>
+								</div>
+								<!-- <div class="status-box">
+									<p>Speed:</p>
+									<div>
+										<span id="speed">-- </span><i class="fa-solid fa-wind"></i> 
+									</div>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<!-- <template id="template">
+			<div class="card">
+				<div class="card__info">
+					<div class="country-city">
+						<span class="city" id="city">City,</span>
+						<span class="country" id="country">Country</span>
+					</div>
+					<div class="card__info--img">
+						<img
+							src="https://cdn-icons-png.flaticon.com/512/2580/2580627.png"
+							alt="sun" />
+						<div class="celcius">
+							<span>--°C</span>
+						</div>
+					</div>
+					<div class="card__info--status">
+						<div class="status-container">
+							<div>
+								<p>Max:</p>
+								<span id="max"
+									>--°C <i class="fas fa-thermometer-full"></i
+								></span>
+							</div>
+							<div>
+								<p>Min:</p>
+								<span id="min"
+									>--°C <i class="fas fa-thermometer-quarter"></i
+								></span>
+							</div>
+
+							<div>
+								<p>Humidity:</p>
+								<span id="humidity"
+									>-- <i class="fa-solid fa-droplet"></i
+								></span>
+							</div>
+							<div>
+								<p>Speed:</p>
+								<span id="speed">-- <i class="fa-solid fa-wind"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<form class="form" id="form" autocomplete="off">
+				<div class="input-container">
+					<div>
+						<label for="city-input" class="label">City</label>
+						<input type="text" id="city-input" />
+					</div>
+					<div>
+						<label for="country-input" class="label">Country</label>
+						<input type="text" id="country-input" />
+					</div>
+				</div>
+
+				<button type="button" id="submit-btn" class="btn-get">
+					Get Weather
+				</button>
+			</form>
+		</template> -->
+		<script src="js/script.js"></script>
+	</body>
+</html>
